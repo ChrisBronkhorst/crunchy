@@ -1,0 +1,15 @@
+{% extends 'common/base.html' %}
+{% load rest_framework %}
+{% block content %}
+
+<div>
+    <h2>{{ model_name }}</h2>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% render_form serializer %}
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+
+{% endblock %}
