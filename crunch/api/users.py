@@ -15,7 +15,6 @@ class CreateUserSerializer(serializers.ModelSerializer):
         return user
 
 class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.IsAdminUser)
-
+    permission_classes = (permissions.IsAdminUser,)
     serializer_class = CreateUserSerializer
     queryset = User.objects.all()
