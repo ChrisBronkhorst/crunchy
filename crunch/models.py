@@ -34,11 +34,11 @@ class FundingRound(models.Model):
                                        related_name='funding_rounds')
 
     def __str__(self):
-        return self.description
+        return "Funding round. Value %s, %s" % (self.size, self.description)
 
     @property
     def size(self):
-        return sum([contribution.amount for contribution in self.contributions])
+        return sum([contribution.amount for contribution in self.contributions.all()])
 
 
 class InvestorFundingRoundContribution(models.Model):
