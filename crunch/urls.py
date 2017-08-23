@@ -3,10 +3,12 @@ from django.views.generic import TemplateView
 from rest_framework import routers
 from crunch.api.users import UserViewSet
 from crunch.api.companies import CompanyViewSet
+from crunch.api.sectors import SectorViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'companies', CompanyViewSet)
+router.register(r'sectors', SectorViewSet)
 
 
 urlpatterns = [
