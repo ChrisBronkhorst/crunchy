@@ -2,12 +2,12 @@ from django.db import models
 
 
 # Create your models here.
-# 5 models, Person, Company, Investor, FundingRound, Sector, Employee
+# 5 models: Person, Company, Investor, Sector, FundingRound, InvestorFundingContribution
 
 class Company(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
-    sector = models.ForeignKey(to=Sector, related_name='companies')
+    sector = models.ForeignKey(to='Sector', related_name='companies')
 
 
 class Sector(models.Model):
@@ -23,6 +23,10 @@ class FundingRound(models.Model):
     company = models.ForeignKey(to=Company, related_name='funding_rounds')
     investors = models.ManyToManyField(to=Investor, through='InvestorFundingRoundContribution',
                                        related_name='funding_rounds')
+
+    @property
+    def size(self):
+        return sum([contribution.amount for contribution in self.contributions])
 
 
 class InvestorFundingRoundContribution(models.Model):
