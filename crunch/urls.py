@@ -7,6 +7,7 @@ from crunch.api.sectors import SectorViewSet
 from crunch.api.investors import InvestorViewSet
 from crunch.api.fundingrounds import FundingRoundViewSet
 from crunch.api.investorfundingroundcontributions import InvestorFundingRoundContributionViewSet
+from crunch import views
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -19,5 +20,6 @@ router.register(r'investor-funding-round-contributions', InvestorFundingRoundCon
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='crunch/home.html'), name='home'),
     url(r'api/', include(router.urls))
+
 ]
 

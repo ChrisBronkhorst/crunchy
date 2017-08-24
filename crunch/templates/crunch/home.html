@@ -7,6 +7,10 @@
 {% else %}
 <a href="{%url 'auth_logout' %}">Logout</a>
 {% endif %}
-
-
+<br><br><br>
+<a href="{%url 'company-list' %}">Manage Companies</a><br>
+<a href="{%url 'investor-list' %}">Manage Investors</a><br>
+<a href="{%url 'sector-list' %}">Manage Sectors</a><br>
+<a href="{%url 'fundinground-list' %}">Manage Funding Rounds</a><br>
+<a href="{%url 'investorfundingroundcontribution-list' %}">Manage Investor contributions to Funding Rounds</a><br>
 {% endblock %}
