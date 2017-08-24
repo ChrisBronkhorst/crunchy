@@ -6,8 +6,8 @@ instead of sqlite.
 ## Install steps.
 Project is build using python 3.5 but should work for any version of python 3.
 
-1) git clone <repo name>
-2) cd <repo name>
+1) git clone https://github.com/ChrisBronkhorst/crunchy.git
+2) cd crunchy
 3) virtualenv env
 4) source activate env
 5) pip install -r requirements.txt
