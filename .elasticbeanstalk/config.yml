@@ -1,16 +1,16 @@
 branch-defaults:
   master:
-    environment: django-env
+    environment: null
     group_suffix: null
 environment-defaults:
   django-env:
-    branch: master
-    repository: origin
+    branch: null
+    repository: null
 global:
   application_name: crunchy
   branch: master
   default_ec2_keyname: aws-eb
-  default_platform: python3.4
+  default_platform: Python 3.4
   default_region: us-west-2
   profile: eb-cli
   repository: origin
