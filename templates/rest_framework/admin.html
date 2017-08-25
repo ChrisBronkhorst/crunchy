@@ -1,0 +1,16 @@
+{% extends "rest_framework/admin.html" %}
+
+{% block branding %}
+<a class='navbar-brand' rel="nofollow" href='{% url 'home' %}'>
+    Home Page
+</a>
+{% endblock %}
+
+{% block userlinks %}
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}</p>
+        <p><a href="{% url 'auth_logout' %}">Logout</a></p>
+    {% else %}
+      <p><a href="{% url 'auth_login' %}">Login</a></p>
+    {% endif %}
+{% endblock %}
