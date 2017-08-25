@@ -47,11 +47,15 @@ __pycache__/
 local_settings.py
 
 .env
-db.sqlite3
 
 ### variables ###
-production_variables.sh
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+production_variables.sh
+
+# Elastic Beanstalk Files
+
+.elasticbeanstalk/*
+
+!.elasticbeanstalk/*.cfg.yml
+
+!.elasticbeanstalk/*.global.yml
+

@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: null
+    environment: crunchy-dev
     group_suffix: null
 environment-defaults:
   django-env:
