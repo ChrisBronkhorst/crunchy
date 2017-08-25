@@ -17,7 +17,7 @@ class CompanySerializer(serializers.ModelSerializer):
 class CompanyViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = CompanySerializer
-    filter_backends = (filters.SearchFilter,)
+    filter_backends = (filters.SearchFilter, filters.OrderingFilter, )
     search_fields = ('name', 'description',)
     renderer_classes = (AdminRenderer, BrowsableAPIRenderer, JSONRenderer)
     queryset = Company.objects.all().prefetch_related('funding_rounds', 'funding_rounds__contributions')
